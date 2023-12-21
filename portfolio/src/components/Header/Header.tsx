@@ -1,56 +1,36 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
-    ArrowPathIcon,
     Bars3Icon,
-    ChartPieIcon,
-    CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { contact_section, headerRefs, callsToAction } from './HeaderContent.ts'
 
-const products = [
-    { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-    { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-    { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-    { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
-const callsToAction = [
-    { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-    { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
-
-function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
+type HeaderProps = {
+    className: string
 }
 
-export default function Header() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+export default function Header({ className }: HeaderProps) {
+    const [mobileMenuOpen, setMenuOpen] = useState(false)
 
     return (
-        <header className="bg-white">
+        <header className={className}>
             {/*
              MOBILE
             */}
-            <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+            <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMenuOpen}>
                 <div className="fixed inset-0 z-10" />
                 <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
                         <a href="#" className="-m-1.5 p-1.5">
-                            <span className="sr-only">Your Company</span>
-                            <img
-                                className="h-8 w-auto"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                alt=""
-                            />
+                            <span className="sr-only">Hugo CASTELL</span>
+                            <img className="h-5 w-auto" src="/assets/icons/logo.svg" alt="Logo" />
                         </a>
                         <button
                             type="button"
                             className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                            onClick={() => setMobileMenuOpen(false)}
+                            onClick={() => setMenuOpen(false)}
                         >
                             <span className="sr-only">Close menu</span>
                             <XMarkIcon className="h-6 w-6" aria-hidden="true" />
@@ -65,16 +45,17 @@ export default function Header() {
                                             <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                                                 Product
                                                 <ChevronDownIcon
-                                                    className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
+                                                    className={open ? 'rotate-180 h-5 w-5 flex-none' : 'h-5 w-5 flex-none'}
                                                     aria-hidden="true"
                                                 />
                                             </Disclosure.Button>
                                             <Disclosure.Panel className="mt-2 space-y-2">
-                                                {[...products, ...callsToAction].map((item) => (
+                                                {[...contact_section, ...callsToAction].map((item) => (
                                                     <Disclosure.Button
                                                         key={item.name}
                                                         as="a"
                                                         href={item.href}
+                                                        target={"_blank"}
                                                         className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                                     >
                                                         {item.name}
@@ -84,33 +65,17 @@ export default function Header() {
                                         </>
                                     )}
                                 </Disclosure>
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >
-                                    Features
-                                </a>
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >
-                                    Marketplace
-                                </a>
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >
-                                    Company
-                                </a>
+                                {headerRefs && (
+                                    headerRefs.map((ref) => (
+                                        <a
+                                            href={ref.href}
+                                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                        >
+                                            {ref.name}
+                                        </a>
+                                    ))
+                                )}
                             </div>
-                            {/* <div className="py-6">
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >
-                                    Log in
-                                </a>
-                            </div> */}
                         </div>
                     </div>
                 </Dialog.Panel>
@@ -121,35 +86,37 @@ export default function Header() {
             */}
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
+                    <a href="#" className="-m-1.5 p-1.5 transition ease-in-out duration-300 hover:scale-110 hover:drop-shadow-2xl">
                         <span className="sr-only">Hugo CASTELL</span>
-                        <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+                        <img className="h-6 w-auto" src="/assets/icons/logo.svg" alt="Logo" />
                     </a>
                 </div>
                 <div className="flex lg:hidden">
                     <button
                         type="button"
                         className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                        onClick={() => setMobileMenuOpen(true)}
+                        onClick={() => setMenuOpen(true)}
                     >
                         <span className="sr-only">Open main menu</span>
                         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
                 <Popover.Group className="hidden lg:flex lg:justify-end lg:gap-x-12">
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Features
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Marketplace
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Company
-                    </a>
+
+                    {headerRefs && (
+                        headerRefs.map((ref) => (
+                            <a
+                                href={ref.href}
+                                className="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out duration-150 hover:text-slate-400"
+                            >
+                                {ref.name}
+                            </a>
+                        ))
+                    )}
 
                     <Popover className="relative">
                         <Popover.Button
-                            className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+                            className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 transition ease-in-out duration-150 hover:text-slate-400 border-transparent">
                             Contact
                             <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true"/>
                         </Popover.Button>
@@ -166,18 +133,18 @@ export default function Header() {
                             <Popover.Panel
                                 className="absolute -right-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                                 <div className="p-4">
-                                    {products.map((item) => (
+                                    {contact_section.map((item) => (
                                         <div
                                             key={item.name}
                                             className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
                                         >
                                             <div
                                                 className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                                <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                                                <item.icon className="h-6 w-6 text-gray-600 fill-gray-600 group-hover:text-indigo-600 group-hover:fill-indigo-600"
                                                            aria-hidden="true"/>
                                             </div>
                                             <div className="flex-auto">
-                                                <a href={item.href} className="block font-semibold text-gray-900">
+                                                <a href={item.href} target={"_blank"} className="block font-semibold text-gray-900">
                                                     {item.name}
                                                     <span className="absolute inset-0"/>
                                                 </a>
@@ -191,6 +158,7 @@ export default function Header() {
                                         <a
                                             key={item.name}
                                             href={item.href}
+                                            target={"_blank"}
                                             className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                                         >
                                             <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true"/>
