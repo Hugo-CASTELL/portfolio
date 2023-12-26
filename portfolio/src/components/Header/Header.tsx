@@ -6,6 +6,8 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { contact_section, headerRefs, callsToAction } from './HeaderContent.ts'
+import {URLS} from "../../resources/urls.ts";
+import {personal_infos} from "../../resources/personal_infos.ts";
 
 type HeaderProps = {
     className: string
@@ -23,8 +25,8 @@ export default function Header({ className }: HeaderProps) {
                 <div className="fixed inset-0 z-10" />
                 <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
-                        <a href="#" className="-m-1.5 p-1.5">
-                            <span className="sr-only">Hugo CASTELL</span>
+                        <a href={URLS.HOME} className="-m-1.5 p-1.5">
+                            <span className="sr-only">{personal_infos.full_name()}</span>
                             <img className="h-5 w-auto" src="/assets/icons/logo.svg" alt="Logo" />
                         </a>
                         <button
@@ -86,8 +88,8 @@ export default function Header({ className }: HeaderProps) {
             */}
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5 transition ease-in-out duration-300 hover:scale-110 hover:drop-shadow-2xl">
-                        <span className="sr-only">Hugo CASTELL</span>
+                    <a href={URLS.HOME} className="-m-1.5 p-1.5 transition ease-in-out duration-300 hover:scale-110 hover:drop-shadow-2xl">
+                        <span className="sr-only">{personal_infos.full_name()}</span>
                         <img className="h-6 w-auto" src="/assets/icons/logo.svg" alt="Logo" />
                     </a>
                 </div>
