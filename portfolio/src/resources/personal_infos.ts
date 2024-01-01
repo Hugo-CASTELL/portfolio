@@ -1,6 +1,7 @@
 interface PersonalInfos {
     first_name: string;
     last_name: string;
+    job: string;
     email: string;
     phone: string;
     city: string;
@@ -14,6 +15,7 @@ interface PersonalInfos {
 export const personal_infos: PersonalInfos = {
     first_name: 'Hugo',
     last_name: 'CASTELL',
+    job: 'Développeur informatique',
     email: 'hugo.castell@outlook.fr',
     phone: '0780368786',
     city: 'Blagnac',

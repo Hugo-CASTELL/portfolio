@@ -8,6 +8,9 @@ export default {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: {
+        'grain': "url('/assets/bg/grain.png')",
+      }
     },
   },
   plugins: [],
