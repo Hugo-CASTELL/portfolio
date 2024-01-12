@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities{
+    /* HomePage */
+    .text-outline {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    /* Fade for background images */
+    .mask-fade {
+        mask-image: linear-gradient(0deg,#0000,#000);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}

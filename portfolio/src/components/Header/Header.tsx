@@ -27,7 +27,7 @@ export default function Header({ className }: HeaderProps) {
                     <div className="flex items-center justify-between">
                         <a href={URLS.HOME} className="-m-1.5 p-1.5">
                             <span className="sr-only">{personal_infos.full_name()}</span>
-                            <img className="h-5 w-auto" src="/assets/icons/logo.svg" alt="Logo" />
+                            <img className="h-5 w-auto" src="assets/svg/logo.svg" alt="Logo" />
                         </a>
                         <button
                             type="button"
@@ -90,7 +90,7 @@ export default function Header({ className }: HeaderProps) {
                 <div className="flex lg:flex-1">
                     <a href={URLS.HOME} className="-m-1.5 p-1.5 transition ease-in-out duration-300 hover:scale-110 hover:drop-shadow-2xl">
                         <span className="sr-only">{personal_infos.full_name()}</span>
-                        <img className="h-6 w-auto" src="/assets/icons/logo.svg" alt="Logo" />
+                        <img className="h-6 w-auto" src="assets/svg/logo.svg" alt="Logo" />
                     </a>
                 </div>
                 <div className="flex lg:hidden">
@@ -109,7 +109,7 @@ export default function Header({ className }: HeaderProps) {
                         headerRefs.map((ref) => (
                             <a
                                 href={ref.href}
-                                className="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out duration-150 hover:text-slate-400"
+                                className="text-sm font-semibold leading-6 text-primary transition ease-in-out duration-150 hover:text-active"
                             >
                                 {ref.name}
                             </a>
@@ -118,7 +118,7 @@ export default function Header({ className }: HeaderProps) {
 
                     <Popover className="relative">
                         <Popover.Button
-                            className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 transition ease-in-out duration-150 hover:text-slate-400 border-transparent">
+                            className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-primary transition ease-in-out duration-150 hover:text-active border-transparent">
                             Contact
                             <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true"/>
                         </Popover.Button>
@@ -143,7 +143,7 @@ export default function Header({ className }: HeaderProps) {
                                             >
                                                 <div
                                                     className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                                                    <item.icon className="h-6 w-6 text-gray-600 fill-gray-600 group-hover:text-indigo-600 group-hover:fill-indigo-600"
+                                                    <item.icon className="h-6 w-6 text-primary fill-primary group-hover:text-secondary group-hover:fill-secondary"
                                                                aria-hidden="true"/>
                                                 </div>
                                                 <div className="flex-auto">

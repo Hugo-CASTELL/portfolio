@@ -5,7 +5,7 @@ import {personal_infos} from "../../resources/personal_infos.ts";
 import {URLS} from "../../resources/urls.ts";
 
 export const headerRefs = [
-    { name: 'Analytics', href: URLS.HOME },
+    { name: 'Second', href: "#second" },
     { name: 'Test', href: URLS.HOME },
     { name: 'Test', href: URLS.HOME },
 ]
