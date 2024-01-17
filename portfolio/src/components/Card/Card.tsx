@@ -17,12 +17,12 @@ export default function CardComponent({ className, card }: HeaderProps) {
 
                 {/* Title */}
                 <div className='row-start-1'>
-                    title
+                    {card.name}
                 </div>
 
                 {/* Content */}
                 <div className='row-start-2'>
-                    content
+                    {card.description}
                 </div>
 
                 {/* Tags */}
