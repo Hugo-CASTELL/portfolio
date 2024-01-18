@@ -17,7 +17,7 @@ export const professional_projects: Card[] = [
 ]
 
 export const educational_projects: Card[] = [
-    { name:"Bonjour", imageUrl:"test/png", description:"blablabla", tags:["test"], languages:["test"], links:["test"]} 
+    { name:"Bonjour", imageUrl:"test/png", description:"blablabla", tags:["test2"], languages:["test"], links:["test"]} 
 ]
 
 export const personal_projects: Card[] = [

@@ -11,11 +11,11 @@ export default function HomePage() {
     const [isTitleHovered, setIsTitleHovered] = useState(false);
     const [selectedTab, setSelectedTab] = useState<Tab>(projects[0]);
 
-    const blog_like: string = "relative mx-auto grid w-full max-w-full px-16 sm:px-18 lg:flex lg:px-36 ";
+    const blog_like: string = "relative mx-auto grid w-full max-w-full px-16 sm:px-18 lg:flex lg:px-36 overflow-visible ";
     const title_1: string = "mt-4 text-3xl sm:text-4xl text-primary font-extrabold tracking-tight ";
 
     return (
-        <div className={"grid grid-cols-1"}>
+        <div className={"grid grid-cols-1 overflow-visible"}>
 
             {/* First screen : Main view */}
             <div id={"first"} className={blog_like}>
@@ -36,7 +36,7 @@ export default function HomePage() {
             </div>
 
             {/* Second screen : Projects */}
-            <div id={"second"} className={"border-t mt-80 lg:mt-96 w-full relative"}>
+            <div id={"second"} className={"border-t mt-80 lg:mt-96 w-full relative overflow-visible "}>
                 <BackgroundPicture
                     className={"absolute z-0 top-0 inset-x-0 " +
                                "flex justify-center " +
@@ -61,16 +61,16 @@ export default function HomePage() {
                                 })}
                             </ul>
                         </nav>
-                        <div id="projects">
+                        <div id="projects" key={"projects"}>
                             {selectedTab && selectedTab.content.map((project: Card) => {
                                 return (
-                                    <AnimatePresence mode="wait">
+                                    <AnimatePresence mode="wait" key={"animation"}>
                                         <motion.div key={project.name}
                                                     initial={{ y: 10, opacity: 0 }}
                                                     animate={{ y: 0, opacity: 1 }}
                                                     exit={{ y: -10, opacity: 0 }}
                                                     transition={{ duration: 0.2 }}>
-                                            <CardComponent className='relative' card={project} />
+                                            <CardComponent className='relative' divKey={project.name}  card={project} />
                                         </motion.div>
                                     </AnimatePresence>
                                 )

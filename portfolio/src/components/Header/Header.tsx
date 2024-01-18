@@ -69,7 +69,7 @@ export default function Header({ className }: HeaderProps) {
                                 {headerRefs && (
                                     headerRefs.map((ref) => (
                                         <a
-                                            href={ref.href}
+                                            href={ref.href.substring(1)}
                                             key={ref.name}
                                             className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                         >
@@ -108,6 +108,7 @@ export default function Header({ className }: HeaderProps) {
                     {headerRefs && (
                         headerRefs.map((ref) => (
                             <a
+                                key={ref.name}
                                 href={ref.href}
                                 className="text-sm font-semibold leading-6 text-primary transition ease-in-out duration-150 hover:text-active"
                             >
@@ -136,7 +137,7 @@ export default function Header({ className }: HeaderProps) {
                                 className="absolute -right-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                                 <div className="p-4">
                                     {contact_section.map((item) => (
-                                        <a href={item.href} target={"_blank"}>
+                                        <a href={item.href} key={item.name} target={"_blank"}>
                                             <div
                                                 key={item.name}
                                                 className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"

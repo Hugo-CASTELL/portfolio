@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
         <Header className={"fixed z-10 top-0 w-full bg-transparent"}/>
 
-        <div className="absolute overflow-hidden w-full">
+        <div className="absolute overflow-visible w-full">
             <div className={"relative mx-0 w-full"}>
                 <App/>
             </div>
