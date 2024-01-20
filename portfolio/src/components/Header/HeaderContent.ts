@@ -4,20 +4,15 @@ import LinkedInIcon from "../Icons/LinkedInIcon.tsx";
 import {personal_infos} from "../../resources/personal_infos.ts";
 
 export const headerRefs = [
-    { name: 'Second', href: "#second" },
+    { name: 'Projets', href: "#second" },
 ]
 
 export const contact_section = [
-    // { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icons: ChartPieIcon },
-    // { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icons: CursorArrowRaysIcon },
-    // { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icons: FingerPrintIcon },
-    // { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icons: SquaresPlusIcon },
-    // { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icons: ArrowPathIcon },
-    { name: 'Github', description: 'Where my code is stored', href: personal_infos.github, icon: GithubIcon },
-    { name: 'LinkedIn', description: 'for non cool stuff', href: personal_infos.linkedin, icon: LinkedInIcon },
+    { name: 'Github', description: 'Voir mes projets open-source', href: personal_infos.github, icon: GithubIcon },
+    { name: 'LinkedIn', description: 'Accéder à mon profil', href: personal_infos.linkedin, icon: LinkedInIcon },
 ]
 export const callsToAction = [
-    { name: 'Mail me', href: `mailto:${personal_infos.email}`, icon: EnvelopeIcon },
-    { name: 'Phone me', href: `tel:${personal_infos.phone}`, icon: PhoneIcon },
+    { name: 'Par mail', href: `mailto:${personal_infos.email}`, icon: EnvelopeIcon },
+    { name: 'Par téléphone', href: `tel:${personal_infos.phone}`, icon: PhoneIcon },
 ]
 

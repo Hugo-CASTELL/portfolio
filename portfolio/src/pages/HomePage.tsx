@@ -6,13 +6,14 @@ import { useState } from "react";
 import GithubIcon from "../components/Icons/GithubIcon.tsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { personal_infos } from "../resources/personal_infos.ts";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function HomePage() {
     const [isTitleHovered, setIsTitleHovered] = useState(false);
     const [selectedTab, setSelectedTab] = useState<Tab>(projects[0]);
 
     const blog_like: string = "relative mx-auto grid w-full max-w-full px-16 sm:px-18 lg:flex lg:px-36 overflow-visible ";
-    const title_1: string = "mt-4 text-3xl sm:text-4xl text-primary font-extrabold tracking-tight ";
+    const title_1: string = "text-3xl sm:text-4xl text-primary font-extrabold tracking-tight ";
 
     return (
         <div className={"grid grid-cols-1 overflow-visible"}>
@@ -46,14 +47,14 @@ export default function HomePage() {
                     source={"assets/img/beams2"}
                 />
                 <div id="projects" className={blog_like + "flex-col z-10"}>
-                    <h1 className={title_1}>Projets</h1>
-                    <div id="projects-container" className="bg-white rounded-lg shadow-2xl p-5">
-                        <nav>
-                            <ul>
+                    <h1 className={title_1 + " my-8"}>Projets</h1>
+                    <div id="projects-container" className="bg-white rounded-3xl shadow-lg h-[560px] flex flex-row px-8">
+                        <nav className="grid place-items-center">
+                            <ul className="space-y-6">
                                 {projects && projects.map((project: Tab) => {
                                     return (
                                         <li key={project.title}
-                                            className={project === selectedTab ? "selected" : ""}
+                                            className={"hover:cursor-pointer " + (project === selectedTab ? "selected" : "")}
                                             onClick={() => setSelectedTab(project)}>
                                             {project.title}
                                         </li>
@@ -61,20 +62,22 @@ export default function HomePage() {
                                 })}
                             </ul>
                         </nav>
-                        <div id="projects" key={"projects"}>
-                            {selectedTab && selectedTab.content.map((project: Card) => {
-                                return (
-                                    <AnimatePresence mode="wait" key={"animation"}>
-                                        <motion.div key={project.name}
+                        <div id="projects" key={"projects"} className="flex-grow overflow-auto flex flex-col py-4">
+                                {selectedTab && selectedTab.content.map((project: Card) => {
+                                    return (
+                                        <div className="px-36 w-full m-auto" key={project.name}>
+                                            <AnimatePresence mode="wait" key={"animation"}>
+                                                <motion.div key={project.name}
                                                     initial={{ y: 10, opacity: 0 }}
                                                     animate={{ y: 0, opacity: 1 }}
                                                     exit={{ y: -10, opacity: 0 }}
                                                     transition={{ duration: 0.2 }}>
-                                            <CardComponent className='relative' divKey={project.name}  card={project} />
-                                        </motion.div>
-                                    </AnimatePresence>
-                                )
-                            })}
+                                                    <CardComponent className="" divKey={project.name} card={project} />
+                                                </motion.div>
+                                            </AnimatePresence>
+                                        </div>
+                                    )
+                                })}
                         </div>
                     </div>
                 </div>
