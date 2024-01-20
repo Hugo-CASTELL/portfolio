@@ -40,6 +40,17 @@ export default function Header({ className }: HeaderProps) {
                     <div className="mt-6 flow-root">
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6">
+                                {headerRefs && (
+                                    headerRefs.map((ref) => (
+                                        <a
+                                            key={ref.name}
+                                            href={ref.href}
+                                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                        >
+                                            {ref.name}
+                                        </a>
+                                    ))
+                                )}
                                 <Disclosure as="div" className="-mx-3">
                                     {({ open }) => (
                                         <>
@@ -66,17 +77,6 @@ export default function Header({ className }: HeaderProps) {
                                         </>
                                     )}
                                 </Disclosure>
-                                {headerRefs && (
-                                    headerRefs.map((ref) => (
-                                        <a
-                                            href={ref.href.substring(1)}
-                                            key={ref.name}
-                                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                        >
-                                            {ref.name}
-                                        </a>
-                                    ))
-                                )}
                             </div>
                         </div>
                     </div>

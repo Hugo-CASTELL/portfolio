@@ -6,7 +6,6 @@ import { useState } from "react";
 import GithubIcon from "../components/Icons/GithubIcon.tsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { personal_infos } from "../resources/personal_infos.ts";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 export default function HomePage() {
     const [isTitleHovered, setIsTitleHovered] = useState(false);
@@ -36,7 +35,7 @@ export default function HomePage() {
                 </div>
             </div>
 
-            {/* Second screen : Projects */}
+            {/* Second screen : Profil */}
             <div id={"second"} className={"border-t mt-80 lg:mt-96 w-full relative overflow-visible "}>
                 <BackgroundPicture
                     className={"absolute z-0 top-0 inset-x-0 " +
@@ -45,6 +44,21 @@ export default function HomePage() {
                     title={"beams"}
                     alt={"Background beams"}
                     source={"assets/img/beams2"}
+                />
+                <div id="projects" className={blog_like + "flex-col z-10"}>
+                    <h1 className={title_1 + " my-8"}>Profil</h1>
+                </div>
+            </div>
+
+            {/* Third screen : Projects */}
+            <div id={"third"} className={"border-t mt-80 lg:mt-96 w-full relative overflow-visible "}>
+                <BackgroundPicture
+                    className={"absolute z-0 top-0 inset-x-0 " +
+                               "flex justify-center " +
+                               "bg-grid bg-repeat bg-top mask-fade"}
+                    title={"beams"}
+                    alt={"Background beams"}
+                    source={"assets/img/beams3"}
                 />
                 <div id="projects" className={blog_like + "flex-col z-10"}>
                     <h1 className={title_1 + " my-8"}>Projets</h1>
@@ -65,14 +79,17 @@ export default function HomePage() {
                         <div id="projects" key={"projects"} className="flex-grow overflow-auto flex flex-col py-4">
                                 {selectedTab && selectedTab.content.map((project: Card) => {
                                     return (
-                                        <div className="px-36 w-full m-auto" key={project.name}>
+                                        <div className="px-28 w-full m-auto" key={project.name}>
                                             <AnimatePresence mode="wait" key={"animation"}>
                                                 <motion.div key={project.name}
                                                     initial={{ y: 10, opacity: 0 }}
                                                     animate={{ y: 0, opacity: 1 }}
                                                     exit={{ y: -10, opacity: 0 }}
                                                     transition={{ duration: 0.2 }}>
-                                                    <CardComponent className="" divKey={project.name} card={project} />
+                                                    <CardComponent className="text-justify"
+                                                                   key={project.name}
+                                                                   bg={"bg-slate-50"}
+                                                                   card={project} />
                                                 </motion.div>
                                             </AnimatePresence>
                                         </div>
@@ -82,16 +99,6 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
-
-            {/*
-            <div id={"second-screen"} className={"mt-80 lg:mt-96 bg-sky-400 w-full"}>
-                <div className={"relative bg-grain bg-repeat inset-0 mix-blend-overlay opacity-20 w-full"}>
-                    <p>
-                        test
-                    </p>
-                </div>
-            </div>
-            */}
 
         </div>
     )
