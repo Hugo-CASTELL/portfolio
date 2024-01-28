@@ -5,6 +5,7 @@ import {personal_infos} from "../../resources/personal_infos.ts";
 export const headerRefs = [
     { name: 'Profil', href: "#second" },
     { name: 'Projets', href: "#third" },
+    { name: 'Statut', href: "#fourth" },
 ]
 
 export const contact_section = [

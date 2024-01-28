@@ -14,7 +14,7 @@ export default function CardComponent({ className, bg, card }: HeaderProps) {
                 <div className={'grid grid-cols-2 grid-rows-[auto, 1fr, auto] gap-y-2'}>
                     {/* Date */}
                     <div className='row-start-1 row-span-3 col-start-1'>
-                        date
+                        {card.date}
                     </div>
 
                     {/* Title */}

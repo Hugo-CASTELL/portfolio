@@ -35,23 +35,35 @@ export default function HomePage() {
                 </div>
             </div>
 
-            {/* Second screen : Profil */}
-            <div id={"second"} className={"border-t mt-80 lg:mt-96 w-full relative overflow-visible "}>
+            {/* Second screen : Profile */}
+            <div id={"second"} className={"mt-80 lg:mt-96 w-full relative overflow-visible "}>
                 <BackgroundPicture
-                    className={"absolute z-0 top-0 inset-x-0 " +
+                    className={"absolute z-0 top-14 inset-x-0 " +
                                "flex justify-center " +
                                "bg-grid bg-repeat bg-top mask-fade"}
                     title={"beams"}
                     alt={"Background beams"}
                     source={"assets/img/beams2"}
                 />
-                <div id="projects" className={blog_like + "flex-col z-10"}>
-                    <h1 className={title_1 + " my-8"}>Profil</h1>
+                <div id="profile" className={blog_like + "flex-col z-10"}>
+                    <h1 className={title_1 + " mt-24"}>Profil</h1>
+                    <div id="margin" className="mt-40">
+                    </div>
+                    <div id="profile-container" className={"absolute top-0 inset-x-0 grid grid-cols-[auto, auto] grid-rows-[1fr, auto]"
+                        + "w-full max-w-full px-16 sm:px-18 lg:px-36"
+                    } >
+                        <div className="row-start-1 col-start-1 mt-48 bg-white rounded-3xl shadow-lg h-[300px]">
+                        </div>
+                        <div className="row-start-1 col-start-2 rounded-3xl shadow-lg h-[500px]">
+                        </div>
+                        <div className="row-start-2 col-start-1 bg-white rounded-3xl shadow-lg h-[200px] w-[500px]">
+                        </div>
+                    </div>
                 </div>
             </div>
 
             {/* Third screen : Projects */}
-            <div id={"third"} className={"border-t mt-80 lg:mt-96 w-full relative overflow-visible "}>
+            <div id={"third"} className={"mt-80 lg:mt-96 w-full relative overflow-visible "}>
                 <BackgroundPicture
                     className={"absolute z-0 top-0 inset-x-0 " +
                                "flex justify-center " +
@@ -96,6 +108,23 @@ export default function HomePage() {
                                     )
                                 })}
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Fourth screen : Status and footer infos */}
+            <div id={"fourth"} className={"mt-80 lg:mt-96 w-full relative overflow-visible "}>
+                <BackgroundPicture
+                    className={"absolute z-0 top-0 inset-x-0 " +
+                               "flex justify-center " +
+                               "bg-grid bg-repeat bg-top mask-fade"}
+                    title={"beams"}
+                    alt={"Background beams"}
+                    source={"assets/img/beams4"}
+                />
+                <div id="status" className={blog_like + "flex-col z-10"}>
+                    <h1 className={title_1 + " my-8"}>Statut</h1>
+                    <div id="status-container" className="bg-white rounded-3xl shadow-lg flex flex-row px-8">
                     </div>
                 </div>
             </div>

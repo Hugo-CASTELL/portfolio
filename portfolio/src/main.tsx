@@ -4,6 +4,7 @@ import App from './App.tsx'
 import './App.css'
 import Header from "./components/Header/Header.tsx";
 import BackgroundPicture from "./components/BackgroundPicture.tsx";
+import Footer from './components/Footer/Footer.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
@@ -16,10 +17,14 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
         <Header className={"fixed z-50 top-0 w-full bg-transparent"}/>
 
-        <div className="absolute overflow-visible w-full">
-            <div className={"relative mx-0 w-full"}>
+        <div className="overflow-visible w-full">
+            <div className={"mx-0 w-full"}>
                 <App/>
             </div>
         </div>
+
+        <Footer className={"bottom-0 mx-0 text-center text-active"}/>
+
+
     </React.StrictMode>,
 )
