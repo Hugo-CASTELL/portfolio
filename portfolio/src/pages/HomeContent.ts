@@ -84,9 +84,34 @@ export const projects: Tab[] = [
 ]
 
 /*
+ * Profil
+ */
+export interface TimeLineEvent {
+    title: string,
+    content: string,
+    date: string,
+}
+
+export const resumeTimeLine: TimeLineEvent[] = [
+    { date:"2022-2024", title:"INEO SCLE Ferroviaire | Alternance", content:"" },
+    { date:"2021-2024", title:"BUT Informatique | IUT Blagnac", content:"" },
+    { date:"2021", title:"Baccalauréat Général", content:"Spécialités Mathématiques et Numérique et Sciences de l'Informatique" },
+]
+
+export interface Tech {
+    imageUrl: string,
+    alt: string,
+}
+
+export const techs: Tech[] = [
+    { alt: "DotNet", imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" },
+    { alt: "C Sharp", imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" },
+    { alt: "Microsoft SQL Server", imageUrl: "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" },
+]
+
+/*
  * Statut
  */
-
 export interface Status {
     searchingJob: boolean,
 }

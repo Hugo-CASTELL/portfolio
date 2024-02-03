@@ -1,11 +1,12 @@
 import Title from "../components/Home/Title.tsx";
 import BackgroundPicture from "../components/BackgroundPicture.tsx";
 import CardComponent from "../components/Card/Card.tsx";
-import { Card, Tab, projects } from "./HomeContent.ts";
+import { Card, Tab, Tech, projects, resumeTimeLine, techs } from "./HomeContent.ts";
 import { useState } from "react";
 import GithubIcon from "../components/Icons/GithubIcon.tsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { personal_infos } from "../resources/personal_infos.ts";
+import TimeLine from "../components/TimeLine/TimeLine.tsx";
 
 export default function HomePage() {
     const [isTitleHovered, setIsTitleHovered] = useState(false);
@@ -49,14 +50,23 @@ export default function HomePage() {
                     <h1 className={title_1 + " mt-24"}>Profil</h1>
                     <div id="margin" className="mt-40">
                     </div>
-                    <div id="profile-container" className={"absolute top-0 inset-x-0 grid grid-cols-[auto, auto] grid-rows-[1fr, auto]"
+                    <div id="profile-container" className={"absolute top-0 inset-x-0 grid grid-rows-[auto, auto]"
                         + "w-full max-w-full px-16 sm:px-18 lg:px-36"
                     } >
-                        <div className="row-start-1 col-start-1 mt-48 bg-white rounded-3xl shadow-lg h-[300px]">
+                        <div className="flex space-x-4">
+                            <div className="mt-48 bg-white rounded-3xl shadow-lg h-[300px]">
+                                o
+                            </div>
+                            <div className="rounded-3xl bg-white shadow-lg h-[500px]">
+                                <TimeLine events={resumeTimeLine} />
+                            </div>
                         </div>
-                        <div className="row-start-1 col-start-2 rounded-3xl shadow-lg h-[500px]">
-                        </div>
-                        <div className="row-start-2 col-start-1 bg-white rounded-3xl shadow-lg h-[200px] w-[500px]">
+                        <div className="row-start-2 col-start-1 bg-white rounded-3xl shadow-lg w-full flex flex-row justify-space-between ">
+                            {techs && techs.map((tech: Tech) => {
+                                return (
+                                    <img src={tech.imageUrl} alt={tech.alt} width="40px" height="40px" />
+                                )
+                            })}
                         </div>
                     </div>
                 </div>
@@ -91,14 +101,14 @@ export default function HomePage() {
                         <div id="projects" key={"projects"} className="flex-grow overflow-auto flex flex-col py-4">
                                 {selectedTab && selectedTab.content.map((project: Card) => {
                                     return (
-                                        <div className="px-28 w-full m-auto" key={project.name}>
+                                        <div className="px-24 w-full m-auto" key={project.name}>
                                             <AnimatePresence mode="wait" key={"animation"}>
                                                 <motion.div key={project.name}
                                                     initial={{ y: 10, opacity: 0 }}
                                                     animate={{ y: 0, opacity: 1 }}
                                                     exit={{ y: -10, opacity: 0 }}
                                                     transition={{ duration: 0.2 }}>
-                                                    <CardComponent className="text-justify"
+                                                    <CardComponent className="text-justify overflow-auto"
                                                                    key={project.name}
                                                                    bg={"bg-slate-50"}
                                                                    card={project} />
