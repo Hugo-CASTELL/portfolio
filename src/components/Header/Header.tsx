@@ -86,7 +86,7 @@ export default function Header({ className }: HeaderProps) {
             {/*
             WIDE SCREEN
             */}
-            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <nav className="mx-auto backdrop-blur-sm flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <a href={"#first"} className="-m-1.5 p-1.5 transition ease-in-out duration-300 hover:scale-110 hover:drop-shadow-2xl">
                         <span className="sr-only">{personal_infos.full_name()}</span>
@@ -99,7 +99,7 @@ export default function Header({ className }: HeaderProps) {
                         className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
                         onClick={() => setMenuOpen(true)}
                     >
-                        <span className="sr-only">Open main menu</span>
+                        <span className="sr-only">Menu principal</span>
                         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>

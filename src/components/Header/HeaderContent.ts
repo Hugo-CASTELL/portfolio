@@ -12,7 +12,7 @@ export const contact_section = [
     { name: 'LinkedIn', description: 'Accéder à mon profil', href: personal_infos.linkedin, icon: LinkedInIcon },
 ]
 export const callsToAction = [
-    { name: 'Par mail', href: `mailto:${personal_infos.email}`, icon: EnvelopeIcon },
-    { name: 'Par téléphone', href: `tel:${personal_infos.phone}`, icon: PhoneIcon },
+    { name: 'hugo.castell@outlook.fr', href: `mailto:${personal_infos.email}`, icon: EnvelopeIcon },
+    { name: '07 80 36 87 86', href: `tel:${personal_infos.phone}`, icon: PhoneIcon },
 ]
 

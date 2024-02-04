@@ -93,9 +93,9 @@ export interface TimeLineEvent {
 }
 
 export const resumeTimeLine: TimeLineEvent[] = [
-    { date:"2022-2024", title:"INEO SCLE Ferroviaire | Alternance", content:"" },
-    { date:"2021-2024", title:"BUT Informatique | IUT Blagnac", content:"" },
-    { date:"2021", title:"Baccalauréat Général", content:"Spécialités Mathématiques et Numérique et Sciences de l'Informatique" },
+    { date:"2022-2024", title:"INEO SCLE Ferroviaire | Alternance", content:"Développement d'applications de calculs et de génération 3D" },
+    { date:"2021-2024", title:"BUT Informatique | IUT Blagnac", content:"Parcours Développement d'Applications" },
+    { date:"2021", title:"Baccalauréat Général", content:"Spécialités Mathématiques et Numérique, Sciences de l'Informatique" },
 ]
 
 export interface Tech {
@@ -107,6 +107,58 @@ export const techs: Tech[] = [
     { alt: "DotNet", imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" },
     { alt: "C Sharp", imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" },
     { alt: "Microsoft SQL Server", imageUrl: "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" },
+]
+
+export interface Hobby {
+    imageUrl: string,
+    alt: string,
+    subtitle: string,
+}
+
+export const hobbies: Hobby[] = [
+    { alt: "Musculation", imageUrl: "assets/img/gym.png", subtitle: "Programmation" },
+    { alt: "Programmation", imageUrl: "assets/img/coding.png", subtitle: "Programmation" },
+    { alt: "Cuisine", imageUrl: "assets/img/cooking.png", subtitle: "Programmation" },
+]
+
+export interface Skill {
+    name: string,
+    imageUrl: string | null,
+    important: boolean,
+}
+
+export interface SkillContainer {
+    title: string,
+    content: Skill[],
+}
+
+export const skills: SkillContainer[] = [
+    { title: "Développement web", content: [
+        { name: "React"  , important: true,  imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" },
+        { name: "Angular", important: false, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg" },
+        { name: "Symfony", important: false, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/symfony/symfony-original.svg" },
+        { name: "ASP.NET", important: false, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/dotnetcore/dotnetcore-original.svg" },
+    ]},
+    { title: "Développement logiciel", content: [
+        { name: "C#",     important: true,  imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" },
+        { name: "Java",   important: false, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" },
+        { name: "Python", important: true,  imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
+        { name: "WPF .NET", important: false, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/dotnetcore/dotnetcore-original.svg" },
+    ]},
+    { title: "Administration système", content: [
+        { name: "Git", important: false, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" },
+        { name: "Ansible", important: true, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/ansible/ansible-original.svg" },
+        { name: "Azure DevOps", important: false, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg" },
+    ]},
+    { title: "Soft skills", content: [
+        { name: "Adaptabilité", important: false, imageUrl: null },
+        { name: "Auto-formation", important: true, imageUrl: null },
+        { name: "Communication", important: false, imageUrl: null },
+        { name: "Force de proposition", important: true, imageUrl: null },
+    ]},
+    { title: "Langues", content: [
+        { name: "Anglais B2 - TOEIC 925", important: true, imageUrl: null },
+    ]},
 ]
 
 /*
