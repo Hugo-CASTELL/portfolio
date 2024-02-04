@@ -7,7 +7,7 @@ type HeaderProps = {
 
 export default function TimeLine({ className, events }: HeaderProps) {
     return (
-        <div className={className = " flex place-content-center"}>
+        <div className={className + " flex place-content-center"}>
             <ol className="relative border-s border-primary-200">                  
                 {events && events.map((event: TimeLineEvent, index: number) => { return (
                         <li className={index == events.length - 1 ? "mb-1 ms-4" : "mb-10 ms-4"}>

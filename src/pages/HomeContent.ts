@@ -116,9 +116,9 @@ export interface Hobby {
 }
 
 export const hobbies: Hobby[] = [
-    { alt: "Musculation", imageUrl: "assets/img/gym.png", subtitle: "Programmation" },
+    { alt: "Musculation", imageUrl: "assets/img/gym.png", subtitle: "Musculation" },
     { alt: "Programmation", imageUrl: "assets/img/coding.png", subtitle: "Programmation" },
-    { alt: "Cuisine", imageUrl: "assets/img/cooking.png", subtitle: "Programmation" },
+    { alt: "Cuisine", imageUrl: "assets/img/cooking.png", subtitle: "Cuisine" },
 ]
 
 export interface Skill {
