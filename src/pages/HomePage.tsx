@@ -7,6 +7,8 @@ import GithubIcon from "../components/Icons/GithubIcon.tsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { personal_infos } from "../resources/personal_infos.ts";
 import TimeLine from "../components/TimeLine/TimeLine.tsx";
+import RadarCircle from "../components/RadarCircle/RadarCircle.tsx";
+import PopoverContact from "../components/Header/PopoverContact.tsx";
 
 export default function HomePage() {
     const [isTitleHovered, setIsTitleHovered] = useState(false);
@@ -15,6 +17,7 @@ export default function HomePage() {
     const blog_like: string = "relative mx-auto grid w-full max-w-full px-16 sm:px-18 lg:flex lg:px-36 overflow-visible ";
     const title_1: string = "text-3xl sm:text-4xl text-primary font-extrabold tracking-tight ";
     const box_ring: string = "ring-1 ring-slate-200 ";
+    const box_ring_secondary: string = "ring-1 ring-secondary ";
 
     return (
         <div className={"grid grid-cols-1 overflow-visible"}>
@@ -179,7 +182,7 @@ export default function HomePage() {
             </div>
 
             {/* Fourth screen : Status and footer infos */}
-            <div id={"fourth"} className={"mt-80 lg:mt-48 w-full relative overflow-visible "}>
+            <div id={"fourth"} className={"mt-80 mb-20 lg:mt-48 w-full relative overflow-visible "}>
                 <BackgroundPicture
                     className={"absolute z-0 top-0 inset-x-0 " +
                                "flex justify-center " +
@@ -190,7 +193,36 @@ export default function HomePage() {
                 />
                 <div id="status" className={blog_like + "flex-col z-10"}>
                     <h1 className={title_1 + " my-8"}>Statut</h1>
-                    <div id="status-container" className="bg-white rounded-3xl shadow-lg flex flex-row px-8">
+                    <div id="status-container" className="flex flex-row justify-between">
+                        <div className={box_ring + "rounded-3xl bg-white shadow-lg p-6 w-64"}>
+                            <RadarCircle className="absolute" on={personal_infos.searching_job} />
+                            <div className="w-full h-full flex place-content-center">
+                                <div className="m-auto text-active text-justify text-sm">
+                                    {personal_infos.searching_job ?
+                                        <p>
+                                            Actuellement en recherche d'une alternance à partir de septembre 2024.
+                                        </p>
+                                        :
+                                        <p>
+                                            test
+                                        </p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div className={box_ring + "overflow-hidden rounded-3xl bg-white shadow-lg"}>
+                            <PopoverContact />
+                        </div>
+                        <motion.div className={box_ring_secondary + "rounded-3xl bg-gradient-to-br from-secondary to-white shadow-lg p-6 w-64 flex items-center justify-center " +
+                                               "hover:cursor-pointer"}
+                                    whileHover={{ scale: 1.05 }}
+                                    onClick={() => window.open(personal_infos.cv_link, "_blank")}>
+                            <div>
+                            <motion.p className="h-full w-full text-center text-white font-extrabold">
+                                Télécharger mon CV
+                            </motion.p>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>

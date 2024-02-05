@@ -11,6 +11,7 @@ interface PersonalInfos {
     linkedin: string;
     cv_link: string;
     face_link: string;
+    searching_job: boolean;
 
     full_name(): string;
 }
@@ -27,6 +28,7 @@ export const personal_infos: PersonalInfos = {
     linkedin: 'https://linkedin.com/in/hugo-castell',
     cv_link: 'https://drive.google.com/file/d/1GHDLDBVInigoo6JznJJAtGjg3W1N05n_/view?usp=sharing',
     face_link: 'assets/images/face.jpeg',
+    searching_job: true,
 
     full_name: function() {
         return `${this.first_name} ${this.last_name}`;

@@ -25,6 +25,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
         <Footer className={"bottom-0 mx-0 text-center text-active"}/>
 
-
     </React.StrictMode>,
 )

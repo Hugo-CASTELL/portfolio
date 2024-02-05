@@ -1,13 +1,14 @@
 - [x] Renommer statut
 - [x] Renommer cours en universitaire
 - [x] Photo de profil
-- [ ] Rappeler les contacts en bas
-- [ ] Télécharger le CV
+- [x] Rappeler les contacts en bas
+- [x] Télécharger le CV
 - [ ] Terminer la partie profil
 - [ ] Ajouter les projets professionnels
 - [ ] Refaire le style des cartes des projets
 - [ ] Compétences du BUT
 - [ ] Problèmes de scroll
+- [ ] Séparer expériences pro et formation
 - [ ] Animation hover projets
 - [ ] Compléter les projets IUT
 - [ ] Lien vers les projets (+ image si intéressant ?)
