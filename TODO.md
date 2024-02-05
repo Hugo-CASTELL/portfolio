@@ -3,11 +3,11 @@
 - [x] Photo de profil
 - [x] Rappeler les contacts en bas
 - [x] Télécharger le CV
-- [ ] Terminer la partie profil
+- [x] Problèmes de scroll
+- [x] Terminer la partie profil
 - [ ] Ajouter les projets professionnels
 - [ ] Refaire le style des cartes des projets
 - [ ] Compétences du BUT
-- [ ] Problèmes de scroll
 - [ ] Séparer expériences pro et formation
 - [ ] Animation hover projets
 - [ ] Compléter les projets IUT

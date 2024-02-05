@@ -106,7 +106,7 @@ export interface Tech {
 export const techs: Tech[] = [
     { alt: ".NET", imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" },
     { alt: "C#", imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" },
-    { alt: "SQL Server", imageUrl: "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" },
+    { alt: "MS SQL", imageUrl: "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" },
 ]
 
 export interface Hobby {

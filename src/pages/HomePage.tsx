@@ -45,7 +45,7 @@ export default function HomePage() {
             </div>
 
             {/* Second screen : Profile */}
-            <div id={"second"} className={"w-full relative overflow-visible "}>
+            <div id={"second"} className={"w-full relative overflow-visible mb-24"}>
                 <div className="mt-20">
                     <BackgroundPicture
                         className={"absolute z-0 top-36 inset-x-0 " +
@@ -57,59 +57,59 @@ export default function HomePage() {
                     />
                     <div id="profile" className={blog_like + "flex-col z-10"}>
                         <h1 className={title_1 + " mt-24"}>Profil</h1>
-                        <div id="margin" className="mt-40">
+                        <div id="margin" className="mt-56">
                         </div>
-                        <div id="profile-container" className={"absolute top-0 inset-x-0 grid grid-rows-[auto, auto]"
-                            + "w-full max-w-full px-16 sm:px-18 lg:px-36"
+                        <div id="profile-container" className={"absolute top-0 inset-x-0 grid grid-rows-[auto, auto, auto] space-y-20"
+                            + " w-full max-w-full px-16 sm:px-18 lg:px-36 "
                         } >
                             <div className="row-start-1 flex space-x-4">
-                                <div className={"mt-40 h-auto my-4"}>
-                                    <p className="text-justify leading-relaxed break-words">
-                                        Bonjour 👋 <br /> <br />
+                                <div className="mt-40 h-auto">
+                                    <p className="text-justify leading-loose break-words">
+                                        Bonjour 👋 <br/> <br/>
 
-                                        Je suis Hugo Castell, développeur français enthousiaste passionné par les défis techniques en tout genre. <br /> <br />
-                                        Etudiant en informatique de 21 ans, je travaille en alternance au sein de l'entreprise d'INEO SCLE Ferroviaire en tant que développeur d'applications C#. <br /> <br />
+                                        Je suis Hugo Castell, je suis un développeur enthousiaste et passionné par les défis techniques en tout genre. <br/><br/>
+                                        Etudiant en informatique de 21 ans, je travaille en alternance au sein de l'entreprise d'INEO SCLE Ferroviaire en tant que développeur d'applications C#. <br/> <br/>
 
-                                        Bienvenue sur mon site personnel et bonne visite ! <br />
+                                        Bienvenue sur mon site personnel et bonne visite !
                                     </p>
-                                    <div className="mt-6 w-full flex flex-row">
-                                        <div className="w-full">
-                                            <h1 className="text-center font-medium text-primary">Ma stack quotidienne</h1>
-                                            <div className="flex flex-row justify-around">
-                                                {techs && techs.map((tech: Tech) => {
-                                                    return (
-                                                        <div>
-                                                            <img className="m-auto" src={tech.imageUrl} alt={tech.alt} width="40px" height="40px" />
-                                                            <p className="text-center text-xs text-active">{tech.alt}</p>
-                                                        </div>
-                                                    )
-                                                })}
-                                            </div>
-                                        </div>
-                                        <div className="w-full">
-                                            <h1 className="text-center font-medium text-primary">Mes hobbies</h1>
-                                            <div className="w-full flex flex-row justify-around">
-                                                {hobbies && hobbies.map((hobby: Hobby) => {
-                                                    return (
-                                                        <div>
-                                                            <img className="m-auto" src={hobby.imageUrl} alt={hobby.alt} width="40px" height="40px" />
-                                                            <p className="text-center text-xs text-active">{hobby.alt}</p>
-                                                        </div>
-                                                    )
-                                                })}
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
-                                <div className={box_ring + "rounded-3xl bg-white shadow-lg p-4 h-[400px] flex place-content-center"}>
+                                <div className={box_ring + "rounded-3xl bg-white shadow-lg p-4 h-[400px] w-[580px] flex place-content-center"}>
                                     <TimeLine events={resumeTimeLine} />
                                 </div>
                             </div>
-                            <div className="mt-4 row-start-2 flex flex-row place-content-around w-full">
+                            <div className="row-rtart-2 w-full flex flex-row py-4 px-20">
+                                <div className="w-full">
+                                    <h1 className="text-center font-bold text-primary mb-2">Ma stack quotidienne</h1>
+                                    <div className="flex flex-row justify-around">
+                                        {techs && techs.map((tech: Tech) => {
+                                            return (
+                                                <div>
+                                                    <img className="m-auto" src={tech.imageUrl} alt={tech.alt} width="40px" height="40px" />
+                                                    <p className="text-center text-xs text-active">{tech.alt}</p>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                                <div className="w-full">
+                                    <h1 className="text-center font-bold text-primary mb-2">Mes hobbies</h1>
+                                    <div className="w-full flex flex-row justify-around">
+                                        {hobbies && hobbies.map((hobby: Hobby) => {
+                                            return (
+                                                <div>
+                                                    <img className="m-auto" src={hobby.imageUrl} alt={hobby.alt} width="40px" height="40px" />
+                                                    <p className="text-center text-xs text-active">{hobby.alt}</p>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row-start-3 flex flex-row place-content-around w-full">
                                 {skills && skills.map((skillcontainer: SkillContainer) => {
                                     return (
-                                        <div className="">
-                                            <h1 className="font-bold text-secondary text-center">{skillcontainer.title}</h1>
+                                        <div>
+                                            <h1 className="font-bold text-secondary text-center mb-2">{skillcontainer.title}</h1>
                                             <div className="grid place-content-center">
                                                 <div className="flex flex-col">
                                                     {skillcontainer.content.map((skill: Skill) => {
@@ -132,32 +132,33 @@ export default function HomePage() {
             </div>
 
             {/* Third screen : Projects */}
-            <div id={"third"} className={"mt-80 lg:mt-96 w-full relative overflow-visible "}>
-                <BackgroundPicture
-                    className={"absolute z-0 top-0 inset-x-0 " +
-                               "flex justify-center " +
-                               "bg-grid bg-repeat bg-top mask-fade"}
-                    title={"beams"}
-                    alt={"Background beams"}
-                    source={"assets/img/beams3"}
-                />
-                <div id="projects" className={blog_like + "flex-col z-10"}>
-                    <h1 className={title_1 + " my-8"}>Projets</h1>
-                    <div id="projects-container" className={box_ring + "bg-white rounded-3xl shadow-lg h-[560px] flex flex-row px-8"}>
-                        <nav className="grid place-items-center">
-                            <ul className="space-y-6">
-                                {projects && projects.map((project: Tab) => {
-                                    return (
-                                        <li key={project.title}
-                                            className={"hover:cursor-pointer " + (project === selectedTab ? "selected" : "")}
-                                            onClick={() => setSelectedTab(project)}>
-                                            {project.title}
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        </nav>
-                        <div id="projects" key={"projects"} className="flex-grow overflow-auto flex flex-col py-4">
+            <div id={"third"} className={"mt-96 lg:mt-[500px] w-full relative overflow-visible "}>
+                <div className="mt-20">
+                    <BackgroundPicture
+                        className={"absolute z-0 top-20 inset-x-0 " +
+                            "flex justify-center " +
+                            "bg-grid bg-repeat bg-top mask-fade"}
+                        title={"beams"}
+                        alt={"Background beams"}
+                        source={"assets/img/beams3"}
+                    />
+                    <div id="projects" className={blog_like + "flex-col z-10"}>
+                        <h1 className={title_1 + " my-8"}>Projets</h1>
+                        <div id="projects-container" className={box_ring + "bg-white rounded-3xl shadow-lg h-[560px] flex flex-row px-8"}>
+                            <nav className="grid place-items-center">
+                                <ul className="space-y-6">
+                                    {projects && projects.map((project: Tab) => {
+                                        return (
+                                            <li key={project.title}
+                                                className={"hover:cursor-pointer " + (project === selectedTab ? "selected" : "")}
+                                                onClick={() => setSelectedTab(project)}>
+                                                {project.title}
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </nav>
+                            <div id="projects" key={"projects"} className="flex-grow overflow-auto flex flex-col py-4">
                                 {selectedTab && selectedTab.content.map((project: Card) => {
                                     return (
                                         <div className="px-24 w-full m-auto" key={project.name}>
@@ -168,21 +169,22 @@ export default function HomePage() {
                                                     exit={{ y: -10, opacity: 0 }}
                                                     transition={{ duration: 0.2 }}>
                                                     <CardComponent className="text-justify overflow-auto"
-                                                                   key={project.name}
-                                                                   bg={"bg-secondary/2"}
-                                                                   card={project} />
+                                                        key={project.name}
+                                                        bg={"bg-secondary/2"}
+                                                        card={project} />
                                                 </motion.div>
                                             </AnimatePresence>
                                         </div>
                                     )
                                 })}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* Fourth screen : Status and footer infos */}
-            <div id={"fourth"} className={"mt-80 mb-20 lg:mt-48 w-full relative overflow-visible "}>
+            <div id={"fourth"} className={"mb-20 lg:mt-40 w-full relative overflow-visible "}>
                 <BackgroundPicture
                     className={"absolute z-0 top-0 inset-x-0 " +
                                "flex justify-center " +
