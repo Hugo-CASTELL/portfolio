@@ -80,7 +80,7 @@ sort_by_date_and_importance(educational_projects);
 
 export const projects: Tab[] = [
     { title:"Personnels", content: personal_projects },
-    { title:"Cours", content: educational_projects },
+    { title:"Universitaires", content: educational_projects },
 ]
 
 /*
@@ -104,21 +104,20 @@ export interface Tech {
 }
 
 export const techs: Tech[] = [
-    { alt: "DotNet", imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" },
-    { alt: "C Sharp", imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" },
-    { alt: "Microsoft SQL Server", imageUrl: "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" },
+    { alt: ".NET", imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" },
+    { alt: "C#", imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" },
+    { alt: "SQL Server", imageUrl: "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" },
 ]
 
 export interface Hobby {
     imageUrl: string,
     alt: string,
-    subtitle: string,
 }
 
 export const hobbies: Hobby[] = [
-    { alt: "Musculation", imageUrl: "assets/img/gym.png", subtitle: "Musculation" },
-    { alt: "Programmation", imageUrl: "assets/img/coding.png", subtitle: "Programmation" },
-    { alt: "Cuisine", imageUrl: "assets/img/cooking.png", subtitle: "Cuisine" },
+    { alt: "Musculation", imageUrl: "assets/img/gym.png" },
+    { alt: "Programmation", imageUrl: "assets/img/coding.png" },
+    { alt: "Cuisine", imageUrl: "assets/img/cooking.png" },
 ]
 
 export interface Skill {
@@ -146,7 +145,7 @@ export const skills: SkillContainer[] = [
         { name: "WPF .NET", important: false, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/dotnetcore/dotnetcore-original.svg" },
     ]},
     { title: "Administration système", content: [
-        { name: "Git", important: false, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" },
+        { name: "Git", important: true, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" },
         { name: "Ansible", important: true, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/ansible/ansible-original.svg" },
         { name: "Azure DevOps", important: false, imageUrl: "https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg" },
     ]},

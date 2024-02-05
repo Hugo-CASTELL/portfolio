@@ -20,7 +20,7 @@ export default function HomePage() {
         <div className={"grid grid-cols-1 overflow-visible"}>
 
             {/* First screen : Main view */}
-            <div id={"first"} className={blog_like + "mb-24"}>
+            <div id={"first"} className={blog_like + "mb-24 w-full"}>
                 <motion.div id={"title-animation"}
                             animate={{ scale: isTitleHovered ? 1.03 : 1 }}>
                     <a target="_blank" href={personal_infos.github}>
@@ -29,10 +29,14 @@ export default function HomePage() {
                            onMouseLeave={() => setIsTitleHovered(false)} />
                     </a>
                 </motion.div>
-                <div className="flex justify-items-center items-center mt-28">
+                <div className="flex justify-items-center items-center mt-28 w-full">
+                    <motion.img className="absolute z-10 right-40 h-96 w-96 hidden xl:block border-8 border-solid border-secondary p-3 rounded-full" src="assets/img/face.jpeg" alt="Arrow down"
+                                animate={{ opacity: 1, filter: isTitleHovered ? "blur(5px)" : "blur(0px)", transition: { ease: "easeInOut", duration: 0.22 } }} />
                     <motion.div id={"title-github-animation"} 
-                                animate={{ x: isTitleHovered ? 50 : 200, opacity: isTitleHovered ? 1 : -1 }}>
-                        <GithubIcon className={"hidden xl:block h-96 w-96 fill-secondary "} />
+                                className="absolute right-36 top-48 z-20"
+                                animate={{ opacity: isTitleHovered ? 1 : -1 }}>
+                        <GithubIcon className={"z-20 hidden xl:block h-[410px] w-auto fill-secondary "} />
+                        <p className="text-center text-active text-xs">Direction mon Github</p>
                     </motion.div>
                 </div>
             </div>
@@ -56,42 +60,49 @@ export default function HomePage() {
                             + "w-full max-w-full px-16 sm:px-18 lg:px-36"
                         } >
                             <div className="row-start-1 flex space-x-4">
-                                <div className={"mt-48 h-auto my-4"}>
-                                    <p>
-                                        Bonjour, je suis Hugo Castell <br />
+                                <div className={"mt-40 h-auto my-4"}>
+                                    <p className="text-justify leading-relaxed break-words">
+                                        Bonjour 👋 <br /> <br />
 
-                                        Je suis un développeur français enthousiaste, passionné par les défis techniques en tout genre. <br />
+                                        Je suis Hugo Castell, développeur français enthousiaste passionné par les défis techniques en tout genre. <br /> <br />
+                                        Etudiant en informatique de 21 ans, je travaille en alternance au sein de l'entreprise d'INEO SCLE Ferroviaire en tant que développeur d'applications C#. <br /> <br />
 
                                         Bienvenue sur mon site personnel et bonne visite ! <br />
                                     </p>
-                                    <div className="flex flex-row">
-                                        <div>
-                                            <h1>Stack quotidienne</h1>
-                                            <div className="flex flex-row justify-space-between ">
+                                    <div className="mt-6 w-full flex flex-row">
+                                        <div className="w-full">
+                                            <h1 className="text-center font-medium text-primary">Ma stack quotidienne</h1>
+                                            <div className="flex flex-row justify-around">
                                                 {techs && techs.map((tech: Tech) => {
                                                     return (
-                                                        <img src={tech.imageUrl} alt={tech.alt} width="40px" height="40px" />
+                                                        <div>
+                                                            <img className="m-auto" src={tech.imageUrl} alt={tech.alt} width="40px" height="40px" />
+                                                            <p className="text-center text-xs text-active">{tech.alt}</p>
+                                                        </div>
                                                     )
                                                 })}
                                             </div>
                                         </div>
-                                        <div>
-                                            <h1>Hobbys</h1>
-                                            <div className="flex flex-row justify-space-between ">
+                                        <div className="w-full">
+                                            <h1 className="text-center font-medium text-primary">Mes hobbies</h1>
+                                            <div className="w-full flex flex-row justify-around">
                                                 {hobbies && hobbies.map((hobby: Hobby) => {
                                                     return (
-                                                        <img src={hobby.imageUrl} alt={hobby.alt} width="40px" height="40px" />
+                                                        <div>
+                                                            <img className="m-auto" src={hobby.imageUrl} alt={hobby.alt} width="40px" height="40px" />
+                                                            <p className="text-center text-xs text-active">{hobby.alt}</p>
+                                                        </div>
                                                     )
                                                 })}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className={box_ring + "rounded-3xl bg-white shadow-lg p-4 flex place-content-center"}>
+                                <div className={box_ring + "rounded-3xl bg-white shadow-lg p-4 h-[400px] flex place-content-center"}>
                                     <TimeLine events={resumeTimeLine} />
                                 </div>
                             </div>
-                            <div className="row-start-2 flex flex-row place-content-around w-full">
+                            <div className="mt-4 row-start-2 flex flex-row place-content-around w-full">
                                 {skills && skills.map((skillcontainer: SkillContainer) => {
                                     return (
                                         <div className="">

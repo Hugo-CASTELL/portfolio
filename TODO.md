@@ -1,0 +1,24 @@
+- [x] Renommer statut
+- [x] Renommer cours en universitaire
+- [x] Photo de profil
+- [ ] Rappeler les contacts en bas
+- [ ] Télécharger le CV
+- [ ] Terminer la partie profil
+- [ ] Ajouter les projets professionnels
+- [ ] Refaire le style des cartes des projets
+- [ ] Compétences du BUT
+- [ ] Problèmes de scroll
+- [ ] Animation hover projets
+- [ ] Compléter les projets IUT
+- [ ] Lien vers les projets (+ image si intéressant ?)
+
+- [ ] Mention bien ?
+
+- [ ] Basculement vers hcastell.fr
+- [ ] Sécuriser la branche main
+- [ ] Clean le github et faire un README 
+- [ ] Traduction Anglais/Français
+- [ ] Détails des formations et de l'alternance
+- [ ] Détails des projets
+- [ ] Bouton voir plus et mettre les trois projets les plus importants
+- [ ] Responsive du site sur téléphone
