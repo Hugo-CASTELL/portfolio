@@ -27,7 +27,7 @@ export const educational_projects: Card[] = [
         tags:["PHP", "Symfony", "Angular"],
         competencesBUT:["Optimiser", "Réaliser", "Collaborer"],
         important: false,
-        link:"https://github.com/IUT-Blagnac/sae-5-1-01-phase4-c-react",
+        link:"https://github.com/Hugo-CASTELL/sae-bibliotheque",
     },
     { 
         date: "2023",
@@ -54,7 +54,7 @@ export const educational_projects: Card[] = [
         tags:["Python", "Django"],
         competencesBUT:["Optimiser", "Réaliser", "Collaborer", "Administrer", "Gérer", "Conduire"],
         important: false,
-        link:"https://github.com/IUT-Blagnac/sae-5-1-01-phase4-c-react",
+        link:"",
     },
     { 
         date: "2021",
@@ -63,7 +63,7 @@ export const educational_projects: Card[] = [
         tags:["Python", "Django"],
         competencesBUT:["Optimiser", "Réaliser", "Collaborer"],
         important: false,
-        link:"https://github.com/IUT-Blagnac/sae-5-1-01-phase4-c-react",
+        link:"https://github.com/Hugo-CASTELL/SAE-2.04-data-analysis",
     },
 ]
 
@@ -74,6 +74,7 @@ export const personal_projects: Card[] = [
         description:"Création de ce site web from scratch.",
         tags:["React", "Tailwind"],
         important: true,
+        link:"https://github.com/Hugo-CASTELL/portfolio",
     },
     { 
         date: "2024",
@@ -81,6 +82,7 @@ export const personal_projects: Card[] = [
         description:"Playbook ansible permettant d'installer ma configuration personnelle automatiquement: logiciels, paramètres, clés d'accès cryptées...",
         tags:["Ansible", "Shell"],
         important: true,
+        link:"https://github.com/Hugo-CASTELL/ansible",
     },
     { 
         date: "2023",
@@ -88,6 +90,7 @@ export const personal_projects: Card[] = [
         description:"Package python permettant d'aider les data analysts à manipuler les APIs de Riot Games.",
         tags:["python"],
         important: true,
+        link:"https://github.com/Hugo-CASTELL/riot_api_manipulation",
     },
     { 
         date: "2023",
@@ -96,6 +99,7 @@ export const personal_projects: Card[] = [
         description:"Participation à la nuit de l'informatique édition 2023.",
         tags:["React", "ASP.NET"],
         important: false,
+        link:"https://github.com/Les-bros-en-Nympho/NDL-2023",
     },
 ]
 
