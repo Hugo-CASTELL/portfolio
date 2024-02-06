@@ -33,12 +33,12 @@ export default function HomePage() {
                     </a>
                 </motion.div>
                 <div className="flex justify-items-center items-center mt-28 w-full">
-                    <motion.img className="absolute z-10 right-40 h-96 w-96 hidden xl:block border-8 border-solid border-secondary p-3 rounded-full" src="assets/img/face.jpeg" alt="Face"
+                    <motion.img className="absolute z-10 hidden lg:block lg:right-20 lg:h-60 lg:w-60 xl:right-40 xl:h-96 xl:w-96 border-8 border-solid border-secondary p-3 rounded-full" src="assets/img/face.jpeg" alt="Face"
                                 animate={{ opacity: 1, filter: isTitleHovered ? "blur(5px)" : "blur(0px)", transition: { ease: "easeInOut", duration: 0.22 } }} />
                     <motion.div id={"title-github-animation"} 
-                                className="absolute right-36 top-48 z-20"
+                                className="absolute lg:right-20 xl:right-36 xl:top-48 z-20"
                                 animate={{ opacity: isTitleHovered ? 1 : -1 }}>
-                        <GithubIcon className={"z-20 hidden xl:block h-[410px] w-auto fill-secondary "} />
+                        <GithubIcon className={"z-20 hidden lg:block lg:h-[235px] xl:h-[410px] w-auto fill-secondary "} />
                         <p className="hidden xl:block text-center text-active text-xs">Direction mon Github</p>
                     </motion.div>
                 </div>
@@ -73,7 +73,7 @@ export default function HomePage() {
                                         Bienvenue sur mon site personnel et bonne visite !
                                     </p>
                                 </div>
-                                <div className={box_ring + "col-start-2 rounded-3xl bg-white shadow-lg p-4 h-[400px] w-[580px] flex flex-col items-start space-y-6"}>
+                                <div className={box_ring + "col-start-2 rounded-3xl bg-white shadow-lg p-4 xl:h-[400px] xl:w-[580px] flex flex-col items-start space-y-6"}>
                                     <div>
                                         <h1 className="font-semibold text-primary-light text-xl mb-2">Expériences professionnelles</h1>
                                         <TimeLine className="ml-2" events={resumeTimeLinePro} />

@@ -9,11 +9,12 @@
 - [x] Refaire le style des cartes des projets
 - [x] Séparer expériences pro et formation
 - [x] Compétences du BUT
-- [ ] Compléter les projets IUT
+- [x] Animation hover projets
+- [x] Lien vers les projets (+ image si intéressant ?)
+- [x] Compléter les projets IUT
 
 # Prioritaire
-- [ ] Animation hover projets
-- [ ] Lien vers les projets (+ image si intéressant ?)
+- [ ] Responsive 
 
 # To Do
 - [ ] Basculement vers hcastell.fr
@@ -24,7 +25,6 @@
 - [ ] Détails des formations et de l'alternance
 - [ ] Détails des projets
 - [ ] Bouton voir plus et mettre les trois projets les plus importants
-- [ ] Responsive du site sur téléphone
 
 # Question
 - [ ] Mention bien ?

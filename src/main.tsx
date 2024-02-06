@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             source={"assets/img/beams"}
         />
 
-        <Header className={"fixed z-50 top-0 w-full bg-transparent"}/>
+        <Header className={"fixed lg:backdrop-blur-sm z-50 top-0 w-full bg-transparent"}/>
 
         <div className="overflow-visible w-full">
             <div className={"mx-0 w-full"}>
