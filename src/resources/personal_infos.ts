@@ -26,7 +26,7 @@ export const personal_infos: PersonalInfos = {
     website: 'https://hcastell.fr',
     github: 'https://github.com/Hugo-CASTELL/',
     linkedin: 'https://linkedin.com/in/hugo-castell',
-    cv_link: 'https://drive.google.com/file/d/1GHDLDBVInigoo6JznJJAtGjg3W1N05n_/view?usp=sharing',
+    cv_link: 'https://drive.google.com/file/d/1KHBOcgwqIP5c98FuxUlXT8K2MI-Jk3yy/view?usp=sharing',
     face_link: 'assets/images/face.jpeg',
     searching_job: true,
 

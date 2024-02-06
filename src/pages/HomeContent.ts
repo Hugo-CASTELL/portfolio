@@ -12,7 +12,7 @@ export interface Card {
 
     competencesBUT?: string[],
 
-    link?: string[],
+    link?: string,
     imageUrl?: string,
 }
 
@@ -21,20 +21,49 @@ export interface Card {
  */
 export const educational_projects: Card[] = [
     { 
-        date: "2023",
-        name:"CiReact",
-        description:"",
-        tags:["IoT", "React", "Tailwind", "NodeJS", "MySQL"],
-        competencesBUT:["Optimiser", "Réaliser", "Collaborer", "Administrer", "Gérer", "Conduire"],
-        important: true,
+        date: "2024",
+        name:"Bibliothèque",
+        description:"Développement d'une application de gestion de bibliothèque avec réservations et emprunts.",
+        tags:["PHP", "Symfony", "Angular"],
+        competencesBUT:["Optimiser", "Réaliser", "Collaborer"],
+        important: false,
+        link:"https://github.com/IUT-Blagnac/sae-5-1-01-phase4-c-react",
     },
     { 
         date: "2023",
+        name:"CiReact | Gestion de SAEs",
+        description:"Développement d'une application permettant la gestion de SAEs avec équipes, défis, et évaluations des équipes.",
+        tags:["IoT", "React", "Tailwind", "NodeJS", "MySQL"],
+        competencesBUT:["Optimiser", "Réaliser", "Collaborer", "Administrer", "Gérer", "Conduire"],
+        important: false,
+        link:"https://github.com/IUT-Blagnac/sae-5-1-01-phase4-c-react",
+    },
+    { 
+        date: "2022",
         name:"CaptElec | Visualisation de flux MQTT",
         description:"Projet consistant à produire un site web réactif permettant de visualiser les informations de flux MQTT sur un SVG représentant un bâtiment. Déplacement entre les étages possibles.",
         tags:["IoT", "React", "Tailwind", "NodeJS", "MySQL"],
+        competencesBUT:["Optimiser", "Réaliser", "Collaborer", "Administrer", "Gérer", "Conduire"],
+        important: false,
+        link:"https://github.com/AimvenDragtow/SAE-ALT-S3-Dev-22-23-CaptElec-3A-Equipe-1",
+    },
+    { 
+        date: "2022",
+        name:"FlopEDT | Prédiction de repas au CROUS",
+        description:"Développement d'un module pour le générateur d'emploi du temps automatique FlopEDT permmettant au restaurant universitaire de prédire le nombre de repas à prévoir chaque jour.",
+        tags:["Python", "Django"],
+        competencesBUT:["Optimiser", "Réaliser", "Collaborer", "Administrer", "Gérer", "Conduire"],
+        important: false,
+        link:"https://github.com/IUT-Blagnac/sae-5-1-01-phase4-c-react",
+    },
+    { 
+        date: "2021",
+        name:"CreaBD | Création d'un base de donnée",
+        description:"Création d'une base de donnée pour un client fictif.",
+        tags:["Python", "Django"],
         competencesBUT:["Optimiser", "Réaliser", "Collaborer"],
-        important: true,
+        important: false,
+        link:"https://github.com/IUT-Blagnac/sae-5-1-01-phase4-c-react",
     },
 ]
 
@@ -48,7 +77,7 @@ export const personal_projects: Card[] = [
     },
     { 
         date: "2024",
-        name:"Personal configs",
+        name:"Installation automatique de poste de travail",
         description:"Playbook ansible permettant d'installer ma configuration personnelle automatiquement: logiciels, paramètres, clés d'accès cryptées...",
         tags:["Ansible", "Shell"],
         important: true,
@@ -56,7 +85,7 @@ export const personal_projects: Card[] = [
     { 
         date: "2023",
         name:"riot-api-manipulation",
-        description:"Package python permettant d'aider les data analysts à manipuler les APIs de Riot Games",
+        description:"Package python permettant d'aider les data analysts à manipuler les APIs de Riot Games.",
         tags:["python"],
         important: true,
     },
@@ -64,7 +93,7 @@ export const personal_projects: Card[] = [
         date: "2023",
         name:"Nuit de l'info 2023",
         imageUrl:"test/png",
-        description:"Participation à la nuit de l'informatique édition 2023",
+        description:"Participation à la nuit de l'informatique édition 2023.",
         tags:["React", "ASP.NET"],
         important: false,
     },
@@ -163,7 +192,7 @@ export const skills: SkillContainer[] = [
         { name: "Force de proposition", important: true, imageUrl: null },
     ]},
     { title: "Langues", content: [
-        { name: "Anglais B2 - TOEIC 925", important: true, imageUrl: null },
+        { name: "Anglais B2 (TOEIC 905)", important: true, imageUrl: null },
     ]},
 ]
 

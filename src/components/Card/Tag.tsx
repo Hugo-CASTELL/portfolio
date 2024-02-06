@@ -60,14 +60,18 @@ export default function Tag({ className, tag }: HeaderProps) {
 
     switch (tag.toLowerCase()) {
         case 'python': blue(); break;
+        case 'php': blue(); break;
         case 'c#': indigo(); break;
         case 'react': cyan(); break;
         case 'tailwind': sky(); break;
         case 'iot': red(); break;
+        case 'symfony': red(); break;
         case 'nodejs': green(); break;
+        case 'angular': green(); break;
         case 'mysql': slate(); break;
         case 'ansible': dark_blue(); break;
         case 'shell': dark_slate(); break;
+        case 'django': dark_slate(); break;
         case 'asp.net': violet(); break;
         }
     

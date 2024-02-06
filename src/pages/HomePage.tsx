@@ -33,7 +33,7 @@ export default function HomePage() {
                     </a>
                 </motion.div>
                 <div className="flex justify-items-center items-center mt-28 w-full">
-                    <motion.img className="absolute z-10 right-40 h-96 w-96 hidden xl:block border-8 border-solid border-secondary p-3 rounded-full" src="assets/img/face.jpeg" alt="Arrow down"
+                    <motion.img className="absolute z-10 right-40 h-96 w-96 hidden xl:block border-8 border-solid border-secondary p-3 rounded-full" src="assets/img/face.jpeg" alt="Face"
                                 animate={{ opacity: 1, filter: isTitleHovered ? "blur(5px)" : "blur(0px)", transition: { ease: "easeInOut", duration: 0.22 } }} />
                     <motion.div id={"title-github-animation"} 
                                 className="absolute right-36 top-48 z-20"
@@ -186,7 +186,7 @@ export default function HomePage() {
                                                     animate={{ y: 0, opacity: 1 }}
                                                     exit={{ y: -10, opacity: 0 }}
                                                     transition={{ duration: 0.2 }}>
-                                                    <CardComponent className="text-justify overflow-auto"
+                                                    <CardComponent className="text-justify"
                                                         key={project.name}
                                                         bg={"bg-secondary/2"}
                                                         card={project} />

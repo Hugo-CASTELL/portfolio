@@ -19,14 +19,16 @@ export default function CardComponent({ className, bg, card }: HeaderProps) {
 
                     {/* Compétences BUT */}
                     {card.competencesBUT &&
-                    <div className='row-start-3 col-start-1 text-active text-left'>
-                            <div className='absolute has-tooltip hover:cursor-help'>
+                        <div className='row-start-3 col-start-1 text-active text-left flex'>
+                            <div className='relative has-tooltip hover:cursor-help'>
                                 <span className="tooltip mt-6 bg-white rounded-lg p-4 ring-1 ring-slate-300">Compétences BUT : {card.competencesBUT.join(" ")}</span>
                                 <div className='rounded-full bg-secondary h-5 w-5 flex items-center justify-center font-extrabold text-white'>
-                                +
+                                    +
                                 </div>
                             </div>
-                    </div>
+                            <div className='w-full'>
+                            </div>
+                        </div>
                     }
 
                     {/* Title */}
@@ -41,7 +43,7 @@ export default function CardComponent({ className, bg, card }: HeaderProps) {
 
                     {/* Tags */}
                     <div id="tags" className='row-start-3 col-start-2 flex space-x-2 overflow-auto'>
-                       {card.tags.map((tag) => <Tag key={card.name + ' ' + tag} tag={tag}/> )}
+                        {card.tags.map((tag) => <Tag key={card.name + ' ' + tag} tag={tag} />)}
                     </div>
                 </div>
             </div>
