@@ -186,10 +186,23 @@ export default function HomePage() {
                                                     animate={{ y: 0, opacity: 1 }}
                                                     exit={{ y: -10, opacity: 0 }}
                                                     transition={{ duration: 0.2 }}>
-                                                    <CardComponent className="text-justify"
-                                                        key={project.name}
-                                                        bg={"bg-secondary/2"}
-                                                        card={project} />
+                                                    {project.link && 
+                                                        <motion.div
+                                                            whileHover={{ scale: 1.02 }}>
+                                                            <a  href={project.link} target="_blank">
+                                                                <CardComponent className="text-justify"
+                                                                    key={project.name}
+                                                                    bg={"bg-secondary/2"}
+                                                                    card={project} />
+                                                            </a>
+                                                        </motion.div>
+                                                    }
+                                                    {!project.link && 
+                                                        <CardComponent className="text-justify"
+                                                            key={project.name}
+                                                            bg={"bg-secondary/2"}
+                                                            card={project} />
+                                                    }
                                                 </motion.div>
                                             </AnimatePresence>
                                         </div>

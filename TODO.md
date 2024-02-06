@@ -17,6 +17,7 @@
 
 # To Do
 - [ ] Basculement vers hcastell.fr
+- [ ] Custom barre de scroll sur les éléments
 - [ ] Sécuriser la branche main
 - [ ] Clean le github et faire un README 
 - [ ] Traduction Anglais/Français
