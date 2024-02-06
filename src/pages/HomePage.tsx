@@ -1,7 +1,7 @@
 import Title from "../components/Home/Title.tsx";
 import BackgroundPicture from "../components/BackgroundPicture.tsx";
 import CardComponent from "../components/Card/Card.tsx";
-import { Card, Hobby, Skill, SkillContainer, Tab, Tech, hobbies, projects, resumeTimeLine, skills, techs } from "./HomeContent.ts";
+import { Card, Hobby, Skill, SkillContainer, Tab, Tech, hobbies, projects, resumeTimeLinePro, resumeTimeLineSchool, skills, techs } from "./HomeContent.ts";
 import { useState } from "react";
 import GithubIcon from "../components/Icons/GithubIcon.tsx";
 import { AnimatePresence, motion } from "framer-motion";
@@ -39,7 +39,7 @@ export default function HomePage() {
                                 className="absolute right-36 top-48 z-20"
                                 animate={{ opacity: isTitleHovered ? 1 : -1 }}>
                         <GithubIcon className={"z-20 hidden xl:block h-[410px] w-auto fill-secondary "} />
-                        <p className="text-center text-active text-xs">Direction mon Github</p>
+                        <p className="hidden xl:block text-center text-active text-xs">Direction mon Github</p>
                     </motion.div>
                 </div>
             </div>
@@ -59,22 +59,29 @@ export default function HomePage() {
                         <h1 className={title_1 + " mt-24"}>Profil</h1>
                         <div id="margin" className="mt-56">
                         </div>
-                        <div id="profile-container" className={"absolute top-0 inset-x-0 grid grid-rows-[auto, auto, auto] space-y-20"
+                        <div id="profile-container" className={"absolute top-0 inset-x-0 grid grid-rows-[auto, auto, auto] space-y-24"
                             + " w-full max-w-full px-16 sm:px-18 lg:px-36 "
                         } >
-                            <div className="row-start-1 flex space-x-4">
-                                <div className="mt-40 h-auto">
-                                    <p className="text-justify leading-loose break-words">
+                            <div className="row-start-1 grid grid-cols-[auto, 1fr] space-x-4">
+                                <div className="col-start-1 mt-40 max-h-[250px] overflow-auto">
+                                    <p className="text-justify leading-relaxed break-words">
                                         Bonjour 👋 <br/> <br/>
 
-                                        Je suis Hugo Castell, je suis un développeur enthousiaste et passionné par les défis techniques en tout genre. <br/><br/>
-                                        Etudiant en informatique de 21 ans, je travaille en alternance au sein de l'entreprise d'INEO SCLE Ferroviaire en tant que développeur d'applications C#. <br/> <br/>
+                                        Je suis Hugo Castell, je suis un développeur enthousiaste et passionné par les défis techniques en tout genre basé à Toulouse, Occitanie, France. <br/><br/>
+                                        Etudiant en informatique de 21 ans, je travaille en alternance au sein de l'entreprise d'INEO SCLE Ferroviaire en tant que développeur d'applications en C#. <br/> <br/>
 
                                         Bienvenue sur mon site personnel et bonne visite !
                                     </p>
                                 </div>
-                                <div className={box_ring + "rounded-3xl bg-white shadow-lg p-4 h-[400px] w-[580px] flex place-content-center"}>
-                                    <TimeLine events={resumeTimeLine} />
+                                <div className={box_ring + "col-start-2 rounded-3xl bg-white shadow-lg p-4 h-[400px] w-[580px] flex flex-col items-start space-y-6"}>
+                                    <div>
+                                        <h1 className="font-semibold text-primary-light text-xl mb-2">Expériences professionnelles</h1>
+                                        <TimeLine className="ml-2" events={resumeTimeLinePro} />
+                                    </div>
+                                    <div>
+                                        <h1 className="font-semibold text-primary-light text-xl mb-2">Parcours de formation</h1>
+                                        <TimeLine className="ml-2" events={resumeTimeLineSchool} />
+                                    </div>
                                 </div>
                             </div>
                             <div className="row-rtart-2 w-full flex flex-row py-4 px-20">
@@ -84,7 +91,7 @@ export default function HomePage() {
                                         {techs && techs.map((tech: Tech) => {
                                             return (
                                                 <div>
-                                                    <img className="m-auto" src={tech.imageUrl} alt={tech.alt} width="40px" height="40px" />
+                                                    <img className="m-auto" src={tech.imageUrl} alt={tech.alt} width="45px" height="45px" />
                                                     <p className="text-center text-xs text-active">{tech.alt}</p>
                                                 </div>
                                             )
@@ -97,7 +104,7 @@ export default function HomePage() {
                                         {hobbies && hobbies.map((hobby: Hobby) => {
                                             return (
                                                 <div>
-                                                    <img className="m-auto" src={hobby.imageUrl} alt={hobby.alt} width="40px" height="40px" />
+                                                    <img className="m-auto" src={hobby.imageUrl} alt={hobby.alt} width="45px" height="45px" />
                                                     <p className="text-center text-xs text-active">{hobby.alt}</p>
                                                 </div>
                                             )
@@ -114,7 +121,7 @@ export default function HomePage() {
                                                 <div className="flex flex-col">
                                                     {skillcontainer.content.map((skill: Skill) => {
                                                         return (
-                                                            <div className="flex flex-row mb-1">
+                                                            <div className="flex flex-row mb-2">
                                                                 {skill.imageUrl && <img src={skill.imageUrl} className="mr-1" width="20px" height="auto" />}
                                                                 <p className={skill.important ? "font-semibold" : "text-primary"}>{skill.name}</p>
                                                             </div>
@@ -132,7 +139,7 @@ export default function HomePage() {
             </div>
 
             {/* Third screen : Projects */}
-            <div id={"third"} className={"mt-96 lg:mt-[500px] w-full relative overflow-visible "}>
+            <div id={"third"} className={"mt-[480px] w-full relative overflow-visible "}>
                 <div className="mt-20">
                     <BackgroundPicture
                         className={"absolute z-0 top-20 inset-x-0 " +
@@ -148,20 +155,31 @@ export default function HomePage() {
                             <nav className="grid place-items-center">
                                 <ul className="space-y-6">
                                     {projects && projects.map((project: Tab) => {
-                                        return (
-                                            <li key={project.title}
-                                                className={"hover:cursor-pointer " + (project === selectedTab ? "selected" : "")}
-                                                onClick={() => setSelectedTab(project)}>
-                                                {project.title}
-                                            </li>
-                                        )
+                                        if(project.title != selectedTab?.title) {
+                                            return (
+                                                <li key={project.title}
+                                                    className={"hover:cursor-pointer link link-underline link-underline-black text-black"}
+                                                    onClick={() => setSelectedTab(project)}>
+                                                    {project.title}
+                                                </li>
+                                            )
+                                        }
+                                        else{
+                                            return (
+                                                <li key={project.title}
+                                                    className={"hover:cursor-pointer text-secondary font-semibold link link-underline link-underline-black text-black"}
+                                                    onClick={() => setSelectedTab(project)}>
+                                                    {project.title}
+                                                </li>
+                                            )
+                                        }
                                     })}
                                 </ul>
                             </nav>
                             <div id="projects" key={"projects"} className="flex-grow overflow-auto flex flex-col py-4">
                                 {selectedTab && selectedTab.content.map((project: Card) => {
                                     return (
-                                        <div className="px-24 w-full m-auto" key={project.name}>
+                                        <div className="px-20 w-full m-auto" key={project.name}>
                                             <AnimatePresence mode="wait" key={"animation"}>
                                                 <motion.div key={project.name}
                                                     initial={{ y: 10, opacity: 0 }}

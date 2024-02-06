@@ -10,6 +10,8 @@ export interface Card {
     tags: string[],
     important: boolean,
 
+    competencesBUT?: string[],
+
     link?: string[],
     imageUrl?: string,
 }
@@ -23,6 +25,7 @@ export const educational_projects: Card[] = [
         name:"CiReact",
         description:"",
         tags:["IoT", "React", "Tailwind", "NodeJS", "MySQL"],
+        competencesBUT:["Optimiser", "Réaliser", "Collaborer", "Administrer", "Gérer", "Conduire"],
         important: true,
     },
     { 
@@ -30,6 +33,7 @@ export const educational_projects: Card[] = [
         name:"CaptElec | Visualisation de flux MQTT",
         description:"Projet consistant à produire un site web réactif permettant de visualiser les informations de flux MQTT sur un SVG représentant un bâtiment. Déplacement entre les étages possibles.",
         tags:["IoT", "React", "Tailwind", "NodeJS", "MySQL"],
+        competencesBUT:["Optimiser", "Réaliser", "Collaborer"],
         important: true,
     },
 ]
@@ -92,8 +96,11 @@ export interface TimeLineEvent {
     date: string,
 }
 
-export const resumeTimeLine: TimeLineEvent[] = [
+export const resumeTimeLinePro: TimeLineEvent[] = [
     { date:"2022-2024", title:"INEO SCLE Ferroviaire | Alternance", content:"Développement d'applications de calculs et de génération 3D" },
+]
+
+export const resumeTimeLineSchool: TimeLineEvent[] = [
     { date:"2021-2024", title:"BUT Informatique | IUT Blagnac", content:"Parcours Développement d'Applications" },
     { date:"2021", title:"Baccalauréat Général", content:"Spécialités Mathématiques et Numérique, Sciences de l'Informatique" },
 ]
