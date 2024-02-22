@@ -63,7 +63,7 @@ export default function HomePage() {
                             + " w-full max-w-full px-16 sm:px-18 lg:px-36 "
                         } >
                             <div className="row-start-1 grid grid-cols-[auto, 1fr] space-x-4">
-                                <div className="col-start-1 mt-40 max-h-[250px] overflow-auto">
+                                <div className="col-start-1 mt-40 max-h-[250px] overflow-visible">
                                     <p className="text-justify leading-relaxed break-words">
                                         Bonjour 👋 <br/> <br/>
 
@@ -84,7 +84,7 @@ export default function HomePage() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="row-rtart-2 w-full flex flex-row py-4 px-20">
+                            <div className="row-rtart-2 w-full flex flex-row justify-around py-4 space-x-16">
                                 <div className="w-full">
                                     <h1 className="text-center font-bold text-primary mb-2">Ma stack quotidienne</h1>
                                     <div className="flex flex-row justify-around">
