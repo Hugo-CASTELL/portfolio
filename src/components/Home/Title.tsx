@@ -6,7 +6,7 @@ interface HeaderProps {
     onMouseEnter?: MouseEventHandler<HTMLDivElement>;
     onMouseLeave?: MouseEventHandler<HTMLDivElement>;
 }
-
+            
 export default function Title({ className, onMouseEnter, onMouseLeave }: HeaderProps) {
     return (
         <div id={"title"} className={className} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
